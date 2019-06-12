@@ -33,7 +33,6 @@ class Image
           if coordinates.first > 0
             @image[coordinates.first-1][coordinates.last] =1
           end
-     
             #(arrindex+1, numindex) bottom
           if coordinates.first+1 <@image.length
             @image[coordinates.first+1][coordinates.last] =1
@@ -48,7 +47,6 @@ class Image
         puts row.join
         end
     end
-    
 end
 
 
