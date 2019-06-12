@@ -15,18 +15,30 @@ class Image
         end 
     end
     
-    def blur 
-        @ones.each_with_index do |coordinates, index|
-            #(arrindex, numindex+1) right   
-            @image[coordinates.first][coordinates.last+1] =1 
+    def blur
+                
+        @ones.each do |coordinates|
+            #if coordinates.first ==0 || coordinates.last == 0  || coordinates.first ==1 || coordinates.last == 1
+            
+                #(arrindex, numindex+1) right   
+            if coordinates.last+1 < @image.first.length
+               @image[coordinates.first][coordinates.last+1] =1 
+            end
             #(arrindex, numindex-1) left
-            @image[coordinates.first][coordinates.last-1] =1         
+            if coordinates.last > 0
+                @image[coordinates.first][coordinates.last-1] =1
+            end        
             #(arrindex-1, numindex) top
-            @image[coordinates.first-1][coordinates.last] =1
+            if coordinates.first > 0
+                @image[coordinates.first-1][coordinates.last] =1
+            end
+     
             #(arrindex+1, numindex) bottom
-            @image[coordinates.first+1][coordinates.last] =1
+            if coordinates.first+1 <@image.length
+                @image[coordinates.first+1][coordinates.last] =1
+            end
         end
-        puts @image.join
+        end
     end
         
 
@@ -34,14 +46,19 @@ class Image
         @image.each do |row|
         puts row.join
         end
-    end    
+    end
+    
 end
 
+
+
 image = Image.new([
-  [0, 0, 0, 0],
-  [0, 1, 0, 0],
-  [0, 0, 0, 1],
-  [0, 0, 0, 0]
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0]
 ])
-image.find_pixels
 image.blur
+image.output_image
