@@ -61,3 +61,5 @@ image = Image.new([
 ])
 image.blur(4)
 image.output_image
+
+
