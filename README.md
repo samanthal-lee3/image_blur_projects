@@ -1,7 +1,7 @@
 The projects included in this repository demonstrates developing mastery of the use of arrays in Ruby.
 
-image1: This problem set uses arrays to build an instance of an image
+image1: This problem set uses arrays to build an instance of an image. The challenge is completed using the combination of 2 methods- first, to initialize the 2-dimensional array, then, to output the array in an organized and visually appealing manner.
 
-image2:
+imageblur: The image blur method is built to take an image and blur specific pixels. First, the find_pixels method iterates over the image array to determine each pixel that will be blurred. Then, the blur method sets limits on the array size and blurs the image without adjusting the size of the original image array. The code in this challenge demonstrates a growing understanding of arrays in ruby. The find_pixels and blur method built and connect two different 2-dimensional arrays to make changes to one.
 
-image3:
+imageblurdistance: This final challenge allows the user to provide any size image to be blurred, and blur that image an infinite amount of times. In this final step, we call the find_pixels method within the blur method. We can do this since the methods are within one ruby class, and can use the properties of inheritance to access all methods in that class. Then, we define the blur method to take an argument, set by the user, to define the number of times the image will blur. The use of a times loop in ruby lets the method run for the time specified by the user.
